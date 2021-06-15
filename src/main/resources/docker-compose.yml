@@ -1,0 +1,14 @@
+version: "3"
+services:
+ fooddb:
+   image: mongo:latest
+   container_name: "fooddb"
+   ports:
+     - 27017:27017
+ mongodb-docker:
+   image: mongodb-docker:1.0
+   container_name: mongodb-docker
+   ports:
+     - 8080:8080
+   links:
+     - fooddb
